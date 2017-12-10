@@ -1,0 +1,23 @@
+{
+  "name": "libtest",
+  "version": "0.1.1",
+  "description": "test amd and other lib tech",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flythnker/quzsc-web-base.git"
+  },
+  "keywords": [
+    "test",
+    "amd"
+  ],
+  "author": "flythnker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flythnker/quzsc-web-base/issues"
+  },
+  "homepage": "https://github.com/flythnker/quzsc-web-base#readme"
+}
