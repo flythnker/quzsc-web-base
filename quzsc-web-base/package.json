@@ -1,7 +1,7 @@
 {
   "name": "quzsc-web-base",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -10,8 +10,14 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
+    "axios": "^0.15.3",
     "express": "~4.15.5",
+    "log4js": "^1.1.0",
     "morgan": "~1.9.0",
+    "tape": "^4.6.3",
+    "mongojs": "^2.4.0",
+    "mysql2": "^1.1.2",
+    "uglify-js": "^3.0.5",
     "serve-favicon": "~2.4.5"
   }
 }

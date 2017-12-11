@@ -2,4 +2,5 @@
 libtest/.idea/*
 libtest/node_modules/*
 quzsc-web-base/.idea/*
+quzsc-web-base/doc/api/*
 quzsc-web-base/node_modules/*
