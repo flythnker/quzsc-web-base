@@ -6,6 +6,7 @@
     "start": "node ./bin/www",
     "doc":"jsdoc -r -d doc/api lib"
   },
+  "main": "index.js",
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
