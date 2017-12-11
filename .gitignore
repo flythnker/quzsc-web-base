@@ -1,5 +1,5 @@
 
-libtest/.idea/libtest.iml
-libtest/.idea/modules.xml
-libtest/.idea/vcs.xml
-libtest/.idea/workspace.xml
+libtest/.idea/*
+libtest/node_modules/*
+quzsc-web-base/.idea/*
+quzsc-web-base/node_modules/*
