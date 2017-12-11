@@ -1,7 +1,9 @@
 /**
  * Created by huangyipeng on 2017/2/9.
  */
-
+/**
+ * @module mysql_service
+ */
 var mysql = require('mysql2');
 var logger = require('./sc_logger').getLogger(__filename);
 

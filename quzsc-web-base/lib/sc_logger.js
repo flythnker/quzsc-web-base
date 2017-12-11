@@ -7,7 +7,7 @@ const log4js = require('log4js');
 var __logger = log4js.getLogger("SC");
 
 /**
- * @class 日志对象
+ * @class SCLogger
  * @type {{}}
  */
 SCLogger = {};

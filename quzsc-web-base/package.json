@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "private": false,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "doc":"jsdoc -r -d doc/api lib"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -19,5 +20,8 @@
     "mysql2": "^1.1.2",
     "uglify-js": "^3.0.5",
     "serve-favicon": "~2.4.5"
-  }
+  },
+  "keywords": ["mysql","中文编程","趣智思成","回调陷阱"],
+  "description": "趣智思成web项目的基础组件，有些API是中文的。",
+  "repository": "https://github.com/flythnker/quzsc-web-base"
 }

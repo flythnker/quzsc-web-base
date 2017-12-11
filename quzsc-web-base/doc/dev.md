@@ -2,5 +2,9 @@
 
 ## 生成api 文档
  
-    jsdoc -r -d doc/api lib
+    npm run doc
+    
+## 启动web 项目
+
+    npm start     
 
