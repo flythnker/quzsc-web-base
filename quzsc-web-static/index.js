@@ -1,2 +1,8 @@
 
-console.info("quzsc-web-static starting now ...");
+/**
+ * @class
+ * @type {{}}
+ */
+var WebStatic = {};
+
+module.exports = WebStatic;
