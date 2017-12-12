@@ -2,11 +2,19 @@
  * Created by huangyipeng on 2017/6/5.
  */
 
+/**
+ * @module seq_func_arr
+ */
+
 // 这是下一版本的 seq_func_arr
 // 命名改进
 // 顺序执行函数 -> 顺序执行函数执行器 -> 多步骤函数执行器
 // 以后再开发了 （2017年6月5日）
 
+/**
+ * @class
+ * @param 上下文
+ */
 var 多步骤函数执行器 = function(上下文){
     if(上下文){
         this.上下文 = 上下文;
@@ -16,6 +24,13 @@ var 多步骤函数执行器 = function(上下文){
     this.步骤函数数组 = [];
 };
 
+/**
+ * @class
+ * @param seqFuncArr
+ * @param name
+ * @param func
+ * @param data
+ */
 var 步骤函数 = function (seqFuncArr, name, func,data ){
     this.seqFuncArr = seqFuncArr;
     this.name = name;
@@ -24,6 +39,9 @@ var 步骤函数 = function (seqFuncArr, name, func,data ){
     this.nextFuncObj = null;
 }
 
+/**
+ * 下一步
+ */
 步骤函数.prototype.next = function(){
     if(this.nextFuncObj){
         this.nextFuncObj.exe();
@@ -32,6 +50,9 @@ var 步骤函数 = function (seqFuncArr, name, func,data ){
     }
 };
 
+/**
+ *
+ */
 步骤函数.prototype.执行 =function(){
     if(this.data == null){
         this.data = this.seqFuncArr.data;
@@ -43,15 +64,26 @@ var 步骤函数 = function (seqFuncArr, name, func,data ){
     this.func(this);
 }
 
+/**
+ *
+ * @param err
+ */
 步骤函数.prototype.报告错误 = function(err){
     this.seqFuncArr.报告错误(err);
 };
 
-
+/**
+ *
+ * @param 步骤函数
+ */
 多步骤函数执行器.prototype.添加 = function( 步骤函数 ){
 
 }
 
+/**
+ *
+ * @param 回调
+ */
 多步骤函数执行器.prototype.执行 = function(回调){
 
 }
