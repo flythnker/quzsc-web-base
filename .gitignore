@@ -4,4 +4,9 @@ libtest/node_modules/*
 quzsc-web-base/.idea/*
 quzsc-web-base/doc/api/*
 quzsc-web-base/node_modules/*
+
 quzsc-web-base/npm-debug.log
+
+quzsc-web-static/.idea/*
+quzsc-web-static/node_modules/*
+
