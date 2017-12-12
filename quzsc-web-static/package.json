@@ -16,5 +16,9 @@
     "express": "~4.15.5",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
-  }
+  },
+  "keywords": ["static","中文编程","趣智思成","ace"],
+  "description": "趣智思成web项目的基础组件，静态页面基础。",
+  "repository": "https://github.com/flythnker/quzsc-web-base",
+  "license":"MIT"
 }
