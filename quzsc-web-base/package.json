@@ -4,6 +4,7 @@
   "private": false,
   "scripts": {
     "start": "node ./bin/www",
+    "test": "node ./test/test.js",
     "doc":"jsdoc -r -d doc/api lib"
   },
   "main": "index.js",
