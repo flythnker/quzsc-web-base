@@ -1,24 +1,1 @@
-{
-  "name": "quzsc-web-static",
-  "version": "0.2.3",
-  "private": false,
-  "bin": {
-    "quzsc-web-static": "./start_static.js"
-  },
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "ejs": "~2.5.7",
-    "express": "~4.15.5",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
-  },
-  "keywords": ["static","中文编程","趣智思成","ace"],
-  "description": "趣智思成web项目的基础组件，静态页面基础。",
-  "repository": "https://github.com/flythnker/quzsc-web-base",
-  "license":"MIT"
-}
+{  "name": "quzsc-web-static",  "version": "0.2.5",  "private": false,  "bin": {    "quzsc-web-static": "./start_static.js"  },  "scripts": {    "start": "node ./bin/www"  },  "dependencies": {    "body-parser": "~1.18.2",    "cookie-parser": "~1.4.3",    "debug": "~2.6.9",    "ejs": "~2.5.7",    "express": "~4.15.5",    "morgan": "~1.9.0",    "serve-favicon": "~2.4.5"  },  "keywords": ["static","中文编程","趣智思成","ace"],  "description": "趣智思成web项目的基础组件，静态页面基础。",  "repository": "https://github.com/flythnker/quzsc-web-base",  "license":"MIT"}
