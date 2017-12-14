@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var basicLogin = require('./lib/auth/basic_login_service');
 var app = express();
 
 // view engine setup
@@ -22,8 +23,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+basicLogin.初始化( "test/data/basic_login.json" );
+app.use('/admin/*', basicLogin.过滤器());
+
 app.use('/', index);
 app.use('/users', users);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
