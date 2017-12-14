@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var basicLogin = require('./lib/auth/basic_login_service');
+var BasicLoginService = require('./lib/auth/basic_login_service');
+var basicLogin = new BasicLoginService();
 var app = express();
 
 // view engine setup
@@ -28,7 +29,6 @@ app.use('/admin/*', basicLogin.过滤器());
 
 app.use('/', index);
 app.use('/users', users);
-
 
 
 // catch 404 and forward to error handler

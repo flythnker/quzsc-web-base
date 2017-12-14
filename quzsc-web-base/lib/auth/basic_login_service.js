@@ -27,14 +27,12 @@ var BaiscLoginService = function(){
 
 };
 
-function 得用登录用户信息(req){
-    return null;
-}
 
 /**
  * @return {Function}
  */
-BaiscLoginService.过滤器 =  function(){
+BaiscLoginService.prototype.过滤器 =  function(){
+    var self = this;
     function unauthorized(req, res){
         res.statusCode = 401;
         res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
@@ -45,7 +43,7 @@ BaiscLoginService.过滤器 =  function(){
         console.info("abc1:"+req.url);
         console.info("abc2:"+req.originalUrl);
 
-        if(!BaiscLoginService.loginUserMap){
+        if(!self.loginUserMap){
             logger.error("BaiscLoginService 没有初始化!");
             unauthorized(req, res);
             return;
@@ -59,8 +57,8 @@ BaiscLoginService.过滤器 =  function(){
             logger.info(user['name']);
 
             var loginUser = null;
-            if(user['name'] in BaiscLoginService.loginUserMap){
-                loginUser = BaiscLoginService.loginUserMap[user['name']];
+            if(user['name'] in self.loginUserMap){
+                loginUser = self.loginUserMap[user['name']];
             }
             if( loginUser && loginUser.userPass == user['pass'] ) {
                 //logger.info("login success!! " + req.originalUrl);
@@ -73,20 +71,20 @@ BaiscLoginService.过滤器 =  function(){
         }
     }
 };
+
 /**
- *
  * @param filepath
  */
-BaiscLoginService.初始化 =  function(filepath){
+BaiscLoginService.prototype.初始化 =  function(filepath){
     if(!utils.fileExist(filepath)){
         throw filepath + " file is not exists.";
     }
-    BaiscLoginService.baiscConfig = utils.readJSONFile(filepath);
-    BaiscLoginService.loginUserMap = {};
-    console.info(JSON.stringify(BaiscLoginService.baiscConfig));
-    logger.info(typeof(BaiscLoginService.baiscConfig.用户));
-    logger.info(BaiscLoginService.baiscConfig.用户.length);
-    for(user of BaiscLoginService.baiscConfig.用户){
+    this.baiscConfig = utils.readJSONFile(filepath);
+    this.loginUserMap = {};
+    console.info(JSON.stringify(this.baiscConfig));
+    logger.info(typeof(this.baiscConfig.用户));
+    logger.info(this.baiscConfig.用户.length);
+    for(user of this.baiscConfig.用户){
         var parts = user.split(",")
         if(parts.length != 3){
             logger.error("用户格式错误 " + user);
@@ -108,26 +106,17 @@ BaiscLoginService.初始化 =  function(filepath){
             continue;
         }
 
-        BaiscLoginService.loginUserMap[parts[1]] = {
+        this.loginUserMap[parts[1]] = {
             userInfo:new UserInfo(parts[0],parts[1]),
             userPass:parts[2]
         };
 
-        logger.info(JSON.stringify( BaiscLoginService.loginUserMap ));
-        console.info("test1" in BaiscLoginService.loginUserMap );
+        logger.info(JSON.stringify( this.loginUserMap ));
+        console.info("test1" in this.loginUserMap );
     }
-    logger.info("Users:" +  Object.keys(BaiscLoginService.loginUserMap) );
+    logger.info("Users:" +  Object.keys(this.loginUserMap) );
 };
-    // /**
-    //  *
-    //  * @returns {Function}
-    //  */
-    // 过滤器:function(){
 
-    // },
-
-
-//};
 
 
 
