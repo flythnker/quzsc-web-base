@@ -10,6 +10,13 @@ var utils = require('./utils');
  * @type {{}}
  */
 var AppConfig = function(){
+    if(arguments.length ==0){
+        this.configNameArr = ["config","sample_config"];
+    }else if(arguments.length ==1){
+        this.configNameArr = [arguments[0]];
+    }else{
+        this.configNameArr = [arguments[0],arguments[1]];
+    }
     this.config = null;
 }
 
@@ -21,16 +28,26 @@ AppConfig.prototype.getConfig = function()
 
 AppConfig.prototype.init = function(dir)
 {
+    var self = this;
     if(this.config){
         console.error("已经初始化了，不能再次初始化!");
         return;
     }
-    if(utils.fileExist(dir + "/config.js"))
-    {
-        this.config = require(dir + "/config");
-    }else{
-        this.config = require(dir + "/sample_config");
+
+    function initConfig(name){
+        if(utils.fileExist(dir + "/"+name+".js"))
+        {
+            self.config = require(dir + "/" + name );
+        }
     }
+
+    for(var name of this.configNameArr){
+        if(this.config){
+            break;
+        }
+        initConfig(name);
+    }
+
 }
 
 module.exports = AppConfig;
