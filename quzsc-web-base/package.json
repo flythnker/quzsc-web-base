@@ -1,7 +1,10 @@
 {
   "name": "quzsc-web-base",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
+  "bin": {
+    "quzsc_web_base": "./quzsc_web_base_cli.js"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "test": "node ./test/test.js",
@@ -12,6 +15,7 @@
     "axios": "^0.15.3",
     "basic-auth": "^2.0.0",
     "body-parser": "~1.18.2",
+    "commander": "^2.12.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
